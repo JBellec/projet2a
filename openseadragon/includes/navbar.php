@@ -13,7 +13,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav"> 
-                      <li class="active"><a href="#">Accueil</a></li>
+                      <li class="active"><a href="accueil.php">Accueil</a></li>
                       <li><a href="#about">Nous contacter</a></li>
                       <li><a href="#contact">Lien utiles</a></li>                 
                     </ul>

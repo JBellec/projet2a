@@ -1,31 +1,48 @@
 <?php include 'includes/header.php'; ?>
-
+  <?php
+   try
+    {
+      $bdd = new PDO('mysql:host=localhost;dbname=projet2a;charset=utf8', 'root', '?jbtumai1992');
+    }
+   catch (Exception $e)
+   {
+      die('Erreur : ' . $e->getMessage('pas connecté'));
+   }
+?>
 <body>
   <?php include 'includes/navbar.php' ?>
+
+                <?php
+                   $req = $bdd->query('SELECT chemin, titre, imgOriginale FROM miniatures');
+                   $i=0; ?>
+                  
     <div class="container">
-      <div class="row row-offcanvas row-offcanvas-right">
-        <div class="col-xs-12 col-sm-9">
-          <p class="pull-right visible-xs">
-            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
-          </p>
           <div class="jumbotron">
             <h3>Plateforme Web de Pathologie Numérique</h3>
           </div>
           
           <div class="row">
-            <div class="col-xs-6 col-lg-4">
-              <?php
-                   $req = $bdd->query('SELECT chemin, titre, imgOriginale FROM miniatures');
-                   while($image = $req->fetch()){ 
+            <?php
+             while($image = $req->fetch()){ 
                ?> 
+            <div class="col-xs-2 col-md-2">
+
               <h2><?php echo $image['titre'];?></h2>
-              <p><a href='<?php echo $image['imgOriginale']; ?>'><img src='<?php echo $image['chemin'];?>' /></a></p>
-              <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-              <?php
-                 }
-              ?>
+              <a href="test.php" ><img src='<?php echo $image['chemin'];?>' /></a>
+              <a class="btn btn-default" href="#" role="button">View details &raquo;</a>
             </div>
+              <?php
+              $i = ($i+1)%6;
+              if($i==12) {
+                ?>
+              
           </div>
+        </div>
+          <?php
+                 } }
+             
+         $req->closeCursor();
+       ?>
 
        <!-- <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
           <div class="list-group">
@@ -40,9 +57,7 @@
         <p>&copy; ENSISA 2015</p>
         
       </footer>
-       <?php 
-         $req->closeCursor();
-       ?>
+       
 
     </div><!--/.container-->
 

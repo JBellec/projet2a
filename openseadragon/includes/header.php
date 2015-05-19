@@ -20,13 +20,4 @@
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
   </head>
-  <?php
-   try
-    {
-      $bdd = new PDO('mysql:host=localhost;dbname=projet2a;charset=utf8', 'root', '?jbtumai1992');
-    }
-   catch (Exception $e)
-   {
-      die('Erreur : ' . $e->getMessage('pas connecté'));
-   }
-?>
+  
