@@ -32,12 +32,11 @@
               <a class="btn btn-default" href="#" role="button">View details &raquo;</a>
             </div>
               <?php
-              $i = ($i+1)%6;
-              if($i==12) {
-                ?>
-              
-          </div>
-        </div>
+                $i = ($i+1)%6;
+                if($i==12) {
+              ?>
+                  </div>
+                  </div>
           <?php
                  } }
              
