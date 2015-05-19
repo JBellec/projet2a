@@ -28,7 +28,7 @@
             <div class="col-xs-2 col-md-2">
 
               <h2><?php echo $image['titre'];?></h2>
-              <a href="dzi_img1.php" ><img src='<?php echo $image['chemin'];?>' /></a>
+              <a href="<?php echo $image['imgOriginale'];?>" ><img src='<?php echo $image['chemin'];?>' /></a>
               <a class="btn btn-default" href="#" role="button">View details &raquo;</a>
             </div>
               <?php
