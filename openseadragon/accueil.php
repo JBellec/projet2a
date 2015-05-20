@@ -2,7 +2,7 @@
   <?php
    try
     {
-      $bdd = new PDO('mysql:host=localhost;dbname=projet2a;charset=utf8', 'root', '?jbtumai1992');
+      $bdd = new PDO('mysql:host=localhost;dbname=projet2a;charset=utf8', 'root', 'root');
     }
    catch (Exception $e)
    {
