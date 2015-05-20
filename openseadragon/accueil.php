@@ -13,7 +13,7 @@
   <?php include 'includes/navbar.php' ?>
 
                 <?php
-                   $req = $bdd->query('SELECT chemin, titre, imgOriginale FROM miniatures');
+                   $req = $bdd->query('SELECT chemin, titre FROM miniatures');
                    $i=0; ?>
                   
     <div class="container">
