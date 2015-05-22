@@ -13,7 +13,7 @@
   <?php include 'includes/navbar.php' ?>
 
                 <?php
-                   $req = $bdd->query('SELECT chemin, titre FROM miniatures');
+                   $req = $bdd->query('SELECT chemin, titre, xml FROM miniatures');
                    $i=0; ?>
                   
     <div class="container">
@@ -26,10 +26,9 @@
              while($image = $req->fetch()){ 
                ?> 
             <div class="col-xs-2 col-md-2">
-
-              <h2><?php echo $image['titre'];?></h2>
-              <a class="titre" href="dzi_img.php?titre=<?php echo $image['titre'];?>" ><img src='<?php echo $image['chemin'];?>' /></a>
-              <a class="btn btn-default" href="#" role="button">View details &raquo;</a>
+              <h2 class="titre"><?php echo $image['titre'];?></h2>
+              <a href="dzi_img.php?titre=<?php echo $image['titre'];?>" ><img src='<?php echo $image['chemin'];?>' /></a>
+              <a class="btn btn-default" href="<?php echo $image['xml'];?>" role="button">View details &raquo;</a>
             </div>
               <?php
                 $i = ($i+1)%6;
@@ -42,7 +41,6 @@
              
          $req->closeCursor();
        ?>
-
        <!-- <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
           <div class="list-group">
             <a href="#" class="list-group-item active">Acceuil</a>
