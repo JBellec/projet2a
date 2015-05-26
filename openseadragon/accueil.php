@@ -29,7 +29,15 @@
             <div class="col-xs-2 col-md-2">
               <h2 class="titre"><?php echo $image['barcode'];?></h2>
               <a href="dzi_img.php?titre=<?php echo $image['titre'];?>" ><img src='<?php echo $image['chemin'];?>' /></a>
-              <a class="btn btn-default" href="<?php echo $image['xml'];?>" role="button">View details &raquo;</a>
+              <!--<a class="btn btn-default" class="dropdown" href="<?php echo $image['xml'];?>" role="button">View details &raquo;</a>-->
+              <li class="dropdown">
+                <a class="btn btn-default" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View details <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>Status : <?php echo $image['status'];?></li>
+                  <li>Tumor : <?php echo $image['tumeur'];?></li>
+                  <li></li>
+                </ul>
+              </li>
             </div>
               <?php
                 $i = ($i+1)%6;
@@ -42,14 +50,6 @@
              
          $req->closeCursor();
        ?>
-       <!-- <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-          <div class="list-group">
-            <a href="#" class="list-group-item active">Acceuil</a>
-            <a href="#" class="list-group-item">Nous contacter</a>
-            <a href="#" class="list-group-item">Lien originaux</a>
-          </div> -->
-        </div><!--/.sidebar-offcanvas-->
-      </div><!--/row-->
 
       <footer>
         <p>&copy; ENSISA 2015</p>
