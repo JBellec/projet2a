@@ -1,4 +1,5 @@
 <?php include 'includes/header.php'; ?>
+<?php include 'includes/connect_bdd.php';?>
   <?php
    try
     {
@@ -8,12 +9,12 @@
    {
       die('Erreur : ' . $e->getMessage('pas connecté'));
    }
-?>
+?> 
 <body>
   <?php include 'includes/navbar.php' ?>
 
                 <?php
-                   $req = $bdd->query('SELECT chemin, titre, xml FROM miniatures');
+                   $req = $bdd->query('SELECT * FROM miniatures');
                    $i=0; ?>
                   
     <div class="container">
@@ -26,7 +27,7 @@
              while($image = $req->fetch()){ 
                ?> 
             <div class="col-xs-2 col-md-2">
-              <h2 class="titre"><?php echo $image['titre'];?></h2>
+              <h2 class="titre"><?php echo $image['barcode'];?></h2>
               <a href="dzi_img.php?titre=<?php echo $image['titre'];?>" ><img src='<?php echo $image['chemin'];?>' /></a>
               <a class="btn btn-default" href="<?php echo $image['xml'];?>" role="button">View details &raquo;</a>
             </div>
