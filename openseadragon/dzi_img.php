@@ -36,7 +36,7 @@
                 Title : <?php echo $image['barcode'];?><br/>
                 Gender : <?php echo $image['genre'];?><br/>
                 Status :
-                <?php if (strcmp($image['status'],'Dead')==1){ ?>
+                <?php if (strcmp($image['vital_status'],'Dead')==1){ ?>
                 <span class="label label-danger">Dead</span><br/>
                 <?php }else{ ?>
 
@@ -49,6 +49,13 @@
                 Tumor : <?php echo $image['tumeur'];?><br/>
                 Days to birth : <?php echo $image['daysToBirth'];?><br/>
                 Days to death : <?php echo $image['daysToDeath'];?><br/>
+                Tumor status : <?php echo $image['tumor_status'];?><br/>
+                Days to last followup : <?php echo $image['last_contact'];?><br/>
+                Age at diagnosis : <?php echo $image['age_diagnosis'];?><br/>
+                Er status by IHC : <?php echo $image['er_status'];?><br/>
+                Pr status by IHC : <?php echo $image['pr_status'];?><br/>
+                Her2 status by IHC : <?php echo $image['her2_status'];?><br/>
+                Histological type : <?php echo $image['histological_type'];?><br/>
             </p>
           </div>
         </div><!--/.sidebar-offcanvas-->

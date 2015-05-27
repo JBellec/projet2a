@@ -33,7 +33,7 @@
               <li class="dropdown">
                 <a class="btn btn-default" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View details <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li>Status : <?php echo $image['status'];?></li>
+                  <li>Status : <?php echo $image['vital_status'];?></li>
                   <li>Tumor : <?php echo $image['tumeur'];?></li>
                   <li></li>
                 </ul>
