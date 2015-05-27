@@ -7,5 +7,5 @@
    {
       die('Erreur : ' . $e->getMessage('pas connecté'));
    }
-   $req = $bdd->query('SELECT * FROM miniatures');
+   
 ?>
