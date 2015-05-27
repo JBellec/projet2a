@@ -33,9 +33,26 @@
               <li class="dropdown">
                 <a class="btn btn-default" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View details <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li>Status : <?php echo $image['vital_status'];?></li>
-                  <li>Tumor : <?php echo $image['tumeur'];?></li>
-                  <li></li>
+                  <li>Gender : <?php echo $image['genre'];?></li>
+                  <li>Status : 
+                    <?php if (strcmp($image['vital_status'],'Dead')==1){ ?>
+                              <span class="label label-danger">Dead</span><br/>
+                    <?php }else{ ?>
+                            <span class="label label-success">Alive</span><br/>
+                    <?php } ?></li>
+                     <li>Race : <?php echo $image['race'];?></li>
+                     <li>Country : <?php echo $image['pays'];?></li>
+                    <li>Tumor : <?php echo $image['tumeur'];?></li>
+                    <li>Days to birth : <?php echo $image['daysToBirth'];?></li>
+                    <li>Days to death : <?php echo $image['daysToDeath'];?></li>
+                    <li>Tumor status : <?php echo $image['tumor_status'];?></li>
+                    <li>Days to last followup : <?php echo $image['last_contact'];?></li>
+                    <li>Age at diagnosis : <?php echo $image['age_diagnosis'];?></li>
+                    <li>Er status by IHC : <?php echo $image['er_status'];?></li>
+                    <li>Er status by IHC : <?php echo $image['er_status'];?></li>
+                    <li>Pr status by IHC : <?php echo $image['pr_status'];?></li>
+                    <li>Her2 status by IHC : <?php echo $image['her2_status'];?></li>
+                    <li>Histological type : <?php echo $image['histological_type'];?></li>
                 </ul>
               </li>
             </div>
