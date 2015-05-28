@@ -12,32 +12,62 @@
 ?> 
 <body>
   <?php include 'includes/navbar.php' ?>
-
-                <?php
-                   $req = $bdd->query('SELECT * FROM miniatures');
-                   $i=0; 
-                ?>
-                  
+<?php
+      $i=0;
+      $gender = $_GET['gender'];
+      $status = $_GET['status'];
+      if( isset($_GET['gender']) && !empty($_GET['gender']) && isset($_GET['status']) && !empty($_GET['status']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where genre='".$gender."' AND vital_status='".$status."'");
+      }
+      elseif( isset($_GET['gender']) && !empty($_GET['gender']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where genre='".$gender."'");
+      }
+      elseif( isset($_GET['status']) && !empty($_GET['status']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where vital_status='".$status."'");
+      }
+      else
+      {
+        $req = $bdd->query('SELECT * FROM miniatures');
+      }
+     ?>
+         
     <div class="container">
-          <div class="jumbotron">
-            <h3>Plateforme Web de Pathologie Numérique</h3>
-          </div>
+      <div class="jumbotron">
+        <h3>Plateforme Web de Pathologie Numérique</h3><br/>
+        <h4>****Recherche avancée**** </h4>
+          <form class="form-inline" method ="get" action ="accueil.php?genre=<?php echo $_GET['gender']&amp;?>status=<?php echo $_GET['status'];?>">
+            Status vital : 
+            <select name="status">
+                <option value=""></option>
+                <option value="Dead">Dead</option>
+                <option value="Alive">Alive</option>
+            </select>
+            Genre : 
+            <select name="gender">
+                <option value=""></option>
+                <option value="MALE">male</option>
+                <option value="FEMALE">female</option>
+            </select>&emsp;&emsp;&emsp;&emsp;&emsp;
+            <button type="submit" class="btn btn-default">Search</button>
+          </form>
+      </div>
           
           <div class="row">
             <?php
              while($image = $req->fetch()){ 
-              echo(strcmp($image['genre'],'FEMALE'));
-               ?> 
+            ?> 
             <div class="col-xs-2 col-md-2">
               <h2 class="titre"><?php echo $image['barcode'];?></h2>
               <a href="dzi_img.php?titre=<?php echo $image['titre'];?>" ><img src='<?php echo $image['chemin'];?>' /></a>
-              <!--<a class="btn btn-default" class="dropdown" href="<?php echo $image['xml'];?>" role="button">View details &raquo;</a>-->
               <li class="dropdown">
                 <a class="btn btn-default" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View details <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li>Gender : <?php echo $image['genre'];?></li>
                   <li>Status : 
-                    <?php if (strcmp($image['vital_status'],'Dead')==1){ ?>
+                    <?php if (strcmp($image['vital_status'],'Dead')==0){ ?>
                               <span class="label label-danger">Dead</span><br/>
                     <?php }else{ ?>
                             <span class="label label-success">Alive</span><br/>
@@ -68,17 +98,7 @@
                  } }
              
          $req->closeCursor();
-       ?>
-
-      <footer>
-        <p>&copy; ENSISA 2015</p>
-        
-      </footer>
-       
-
+       ?>     
     </div><!--/.container-->
-
-
-    
   </body>
 </html>

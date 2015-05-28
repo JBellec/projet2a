@@ -4,11 +4,14 @@
 <body>
   <?php include 'includes/navbar.php' ?>
 
-                <?php
+      <?php
       $i=0;
-       if( isset($_GET['gender']) && !empty($_GET['gender'])){
+       if( isset($_GET['gender']) && !empty($_GET['gender']) && isset($_GET['status']) && !empty($_GET['status'])){
       echo "not empty";
-      $req = $bdd->query('SELECT * from miniatures where genre=\'' . $_GET['gender'] . '\'');    }
+      $gender = $_GET['gender'];
+      $status = $_GET['status'];
+      $req = $bdd->query("SELECT * from miniatures where genre='".$gender."' AND vital_status='".$status."'");
+      }
       else{
                      $req = $bdd->query('SELECT * FROM miniatures');
                   }
@@ -20,17 +23,19 @@
       <h4>****Recherche avancée**** </h4>
     <form class="form-inline" method ="get" action ="testAccueil.php?genre=<?php echo $_GET['gender']&amp;?>status=<?php echo $_GET['status'];?>">
       <select name="status">
+          <option value=""></option>
           <option value="Dead">Dead</option>
           <option value="Alive">Alive</option>
       </select>
       <select name="gender">
+          <option value=""></option>
           <option value="MALE">male</option>
           <option value="FEMALE">female</option>
       </select>&emsp;&emsp;&emsp;&emsp;&emsp;
       <button type="submit" class="btn btn-default">Search</button>
     </form>
 
-          </div>
+    </div>
           
           <div class="row">
             <?php
