@@ -36,7 +36,7 @@
                 Title : <?php echo $image['barcode'];?><br/>
                 Gender : <?php echo $image['genre'];?><br/>
                 Status :
-                <?php if (strcmp($image['vital_status'],'Dead')==1){ ?>
+                <?php if (strcmp($image['vital_status'],'Dead')==0){ ?>
                 <span class="label label-danger">Dead</span><br/>
                 <?php }else{ ?>
 

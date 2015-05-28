@@ -15,7 +15,8 @@
 
                 <?php
                    $req = $bdd->query('SELECT * FROM miniatures');
-                   $i=0; ?>
+                   $i=0; 
+                ?>
                   
     <div class="container">
           <div class="jumbotron">
@@ -25,6 +26,7 @@
           <div class="row">
             <?php
              while($image = $req->fetch()){ 
+              echo(strcmp($image['genre'],'FEMALE'));
                ?> 
             <div class="col-xs-2 col-md-2">
               <h2 class="titre"><?php echo $image['barcode'];?></h2>
