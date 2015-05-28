@@ -13,9 +13,9 @@
 <body>
   <?php include 'includes/navbar.php' ?>
 <?php
-      $i=0;
-      $gender = $_GET['gender'];
-      $status = $_GET['status'];
+      $i=0;  
+      $gender = isset($_GET['gender']) && !empty($_GET['gender']) ? $_GET['gender']: '';
+      $status = isset($_GET['status']) && !empty($_GET['status']) ? $_GET['status']: '';
       if( isset($_GET['gender']) && !empty($_GET['gender']) && isset($_GET['status']) && !empty($_GET['status']))
       {
         $req = $bdd->query("SELECT * from miniatures where genre='".$gender."' AND vital_status='".$status."'");
