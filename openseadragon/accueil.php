@@ -45,13 +45,13 @@
         <h4>****Recherche avancée**** </h4>
           <form class="form-inline" method ="get" action ="accueil.php">
             <label>Barcode : </label>
-            <input name ="barcode" type ="text" placeholder ="TCGA-**-****" size="13"/>
+            <input name ="barcode" type ="text" placeholder ="TCGA-**-****" size="13"/>&emsp;
             <label>Status vital : </label>
             <select name="status">
                 <option value=""></option>
                 <option value="Dead">Dead</option>
                 <option value="Alive">Alive</option>
-            </select>
+            </select>&emsp;
             <label>Genre : </label>
             <select name="gender">
                 <option value=""></option>
