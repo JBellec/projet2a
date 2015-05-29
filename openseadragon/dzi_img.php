@@ -11,8 +11,9 @@
        <?php include 'includes/navbar.php' ?> 
        <?php include 'includes/connect_bdd.php';?>
 
+       <div class="container">
        <div class="row">
-            <div id="container" class ="col-xs-8">
+            <div id="container" class ="col-xs-5">
             <div id="openseadragon1" style="width: 800px; height: 600px;"></div>
                 <script src="openseadragon.min.js"></script>
                 <script src="openseadragon.js"></script>
@@ -22,12 +23,13 @@
                     prefixUrl: "images/",
                     tileSources:"PhotoDzi/<?php echo $_GET['titre'];?>.dzi"
                     });
-                  
                 </script>
+            
 
             </div>
+        </div>
 
-        <div class="col-xs-4 col-sm-3" id="sidebar">
+        <div class="col-xs-3 col-sm-3" id="sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
             <?php

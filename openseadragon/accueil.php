@@ -88,7 +88,6 @@
                     <li>Days to last followup : <?php echo $image['last_contact'];?></li>
                     <li>Age at diagnosis : <?php echo $image['age_diagnosis'];?></li>
                     <li>Er status by IHC : <?php echo $image['er_status'];?></li>
-                    <li>Er status by IHC : <?php echo $image['er_status'];?></li>
                     <li>Pr status by IHC : <?php echo $image['pr_status'];?></li>
                     <li>Her2 status by IHC : <?php echo $image['her2_status'];?></li>
                     <li>Histological type : <?php echo $image['histological_type'];?></li>
