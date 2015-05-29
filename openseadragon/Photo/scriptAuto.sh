@@ -34,9 +34,9 @@ do
 	sed "s/<\/shared:gender>//" <tmpGender2.xml>gender
 	sed "s/^\ \ *//" <gender>gender2
 	tr -d '\r\n' < gender2 > gender3
-	#rm tmpGender2.xml | rm tmpGender.xml
+	rm tmpGender2.xml | rm tmpGender.xml
 	gender=$(<gender3)
-	#rm gender | rm gender2 | rm gender3
+	rm gender | rm gender2 | rm gender3
 	echo $gender
 
 	grep "<shared:vital_status .*>.*</.*>" <patient.xml>tmpStatus.xml
