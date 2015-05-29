@@ -16,6 +16,7 @@
       $i=0;  
       $gender = isset($_GET['gender']) && !empty($_GET['gender']) ? $_GET['gender']: '';
       $status = isset($_GET['status']) && !empty($_GET['status']) ? $_GET['status']: '';
+      $barcode = isset($_GET['barcode']) && !empty($_GET['barcode']) ? $_GET['barcode']: '';
       if( isset($_GET['gender']) && !empty($_GET['gender']) && isset($_GET['status']) && !empty($_GET['status']))
       {
         $req = $bdd->query("SELECT * from miniatures where genre='".$gender."' AND vital_status='".$status."'");
@@ -28,6 +29,10 @@
       {
         $req = $bdd->query("SELECT * from miniatures where vital_status='".$status."'");
       }
+      elseif( isset($_GET['barcode']) && !empty($_GET['barcode']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where barcode='".$barcode."'");
+      }
       else
       {
         $req = $bdd->query('SELECT * FROM miniatures');
@@ -38,14 +43,16 @@
       <div class="jumbotron">
         <h3>Plateforme Web de Pathologie Numérique</h3><br/>
         <h4>****Recherche avancée**** </h4>
-          <form class="form-inline" method ="get" action ="accueil.php?genre=<?php echo $_GET['gender']&amp;?>status=<?php echo $_GET['status'];?>">
-            Status vital : 
+          <form class="form-inline" method ="get" action ="accueil.php">
+            <label>Barcode : </label>
+            <input name ="barcode" type ="text" placeholder ="TCGA-**-****" size="13"/>
+            <label>Status vital : </label>
             <select name="status">
                 <option value=""></option>
                 <option value="Dead">Dead</option>
                 <option value="Alive">Alive</option>
             </select>
-            Genre : 
+            <label>Genre : </label>
             <select name="gender">
                 <option value=""></option>
                 <option value="MALE">male</option>

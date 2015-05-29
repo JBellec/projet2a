@@ -15,14 +15,16 @@
             <div id="container" class ="col-xs-8">
             <div id="openseadragon1" style="width: 800px; height: 600px;"></div>
                 <script src="openseadragon.min.js"></script>
-                <script src="annotatorPluginOpenSeadragon.js"></script>
+                <script src="openseadragon.js"></script>
                 <script type="text/javascript">
                     var viewer = OpenSeadragon({
                     id: "openseadragon1",
                     prefixUrl: "images/",
                     tileSources:"PhotoDzi/<?php echo $_GET['titre'];?>.dzi"
                     });
+                  
                 </script>
+
             </div>
 
         <div class="col-xs-4 col-sm-3" id="sidebar">
@@ -57,6 +59,9 @@
                 Her2 status by IHC : <?php echo $image['her2_status'];?><br/>
                 Histological type : <?php echo $image['histological_type'];?><br/>
             </p>
+            <?php
+            $req->closeCursor();
+            ?>
           </div>
         </div><!--/.sidebar-offcanvas-->
        </div>
