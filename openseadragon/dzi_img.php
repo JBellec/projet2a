@@ -3,11 +3,12 @@
     <head>
         <!-- En-tête de la page -->
         <meta charset="utf-8" />
-        <title>Titre</title>
+	 <title>Image</title>
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     </head>
 
     <body>
+
        <?php include 'includes/navbar.php' ?> 
        <?php include 'includes/connect_bdd.php';?>
 
@@ -56,9 +57,28 @@
                 Tumor status : <?php echo $image['tumor_status'];?><br/>
                 Days to last followup : <?php echo $image['last_contact'];?><br/>
                 Age at diagnosis : <?php echo $image['age_diagnosis'];?><br/>
-                Er status by IHC : <?php echo $image['er_status'];?><br/>
-                Pr status by IHC : <?php echo $image['pr_status'];?><br/>
-                Her2 status by IHC : <?php echo $image['her2_status'];?><br/>
+                Er status by IHC : 
+		<?php if (strcmp($image['er_status'],'Negative')==0){ ?>
+			<span class="label label-danger">Negative</span><br/>
+			      <?php }else{ ?>
+			 <span class="label label-success">Positive</span><br/>
+			       <?php } ?>
+                Pr status by IHC : 			       		
+		<?php if (strcmp($image['pr_status'],'Negative')==0){ ?>
+			<span class="label label-danger">Negative</span><br/>
+				<?php } elseif(strcmp($image['pr_status'],'Indeterminate')==0){?>
+			<span class="label label-warning">Indeterminate</span><br/>
+			       	<?php }else{ ?>
+			<span class="label label-success">Positive</span><br/>
+			       	<?php } ?>
+                Her2 status by IHC : 
+		<?php if (strcmp($image['her2_status'],'Negative')==0){ ?>
+			<span class="label label-danger">Negative</span><br/>
+				<?php } elseif(strcmp($image['her2_status'],'Equivocal')==0){?>
+			<span class="label label-warning">Equivocal</span><br/>
+			       	<?php }else{ ?>
+			<span class="label label-success">Positive</span><br/>
+			       	<?php } ?>
                 Histological type : <?php echo $image['histological_type'];?><br/>
             </p>
             <?php

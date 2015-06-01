@@ -1,5 +1,6 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/connect_bdd.php';?>
+ <link href="style.css" rel="stylesheet">
   <?php
    try
     {
@@ -11,23 +12,34 @@
    }
 ?> 
 <body>
-  <?php include 'includes/navbar.php' ?>
+ <title>Accueil</title>
+  <?php include 'includes/navbar.php' ;?>
 <?php
       $i=0;  
-      $gender = isset($_GET['gender']) && !empty($_GET['gender']) ? $_GET['gender']: '';
+      $her2_status = isset($_GET['her2_status']) && !empty($_GET['her2_status']) ? $_GET['her2_status']: '';
       $status = isset($_GET['status']) && !empty($_GET['status']) ? $_GET['status']: '';
+      $er_status = isset($_GET['er_status']) && !empty($_GET['er_status']) ? $_GET['er_status']: '';
+      $pr_status = isset($_GET['pr_status']) && !empty($_GET['pr_status']) ? $_GET['pr_status']: '';
       $barcode = isset($_GET['barcode']) && !empty($_GET['barcode']) ? $_GET['barcode']: '';
-      if( isset($_GET['gender']) && !empty($_GET['gender']) && isset($_GET['status']) && !empty($_GET['status']))
+      if( isset($_GET['her2_status']) && !empty($_GET['her2_status']) && isset($_GET['status']) && !empty($_GET['status']))
       {
-        $req = $bdd->query("SELECT * from miniatures where genre='".$gender."' AND vital_status='".$status."'");
+        $req = $bdd->query("SELECT * from miniatures where her2_status='".$her2_status."' AND vital_status='".$status."'");
       }
-      elseif( isset($_GET['gender']) && !empty($_GET['gender']))
+      elseif( isset($_GET['her2_status']) && !empty($_GET['her2_status']))
       {
-        $req = $bdd->query("SELECT * from miniatures where genre='".$gender."'");
+        $req = $bdd->query("SELECT * from miniatures where her2_status='".$her2_status."'");
       }
       elseif( isset($_GET['status']) && !empty($_GET['status']))
       {
         $req = $bdd->query("SELECT * from miniatures where vital_status='".$status."'");
+      }
+      elseif( isset($_GET['er_status']) && !empty($_GET['er_status']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where er_status='".$er_status."'");
+      }
+      elseif( isset($_GET['pr_status']) && !empty($_GET['pr_status']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where pr_status='".$pr_status."'");
       }
       elseif( isset($_GET['barcode']) && !empty($_GET['barcode']))
       {
@@ -41,34 +53,55 @@
          
     <div class="container">
       	<div class="jumbotron">
+
         		<h3>Plateforme Web de Pathologie Numérique</h3><br/>
-        		<h4>****Recherche avancée**** </h4>
+<div class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title">Recherche avancée</h3>
+      </div>
+      <div class="panel-body">
+ 
+    
 	          <form class="form-inline" method ="get" action ="accueil.php">
 	            <label>Barcode : </label>
-	            <input name ="barcode" type ="text" placeholder ="TCGA-**-****" size="13"/>&emsp;
+	            		<input name ="barcode" type ="text" placeholder ="TCGA-**-****" size="13"/>&emsp;
 	            <label>Status vital : </label>
 	           		 <select name="status">
-		  		 <option value=""></option>
+		  		 <option value=""><?php if( isset($_GET['status']) && !empty($_GET['status'])) {echo $_GET['status']; }?></option>
 		  		 <option value="Dead">Dead</option>
 		  		<option value="Alive">Alive</option>
 	            		</select>&emsp;
-	            <label>Genre : </label>
-	            		<select name="gender">
-		  		 <option value=""></option>
-		   		<option value="MALE">male</option>
-		  		 <option value="FEMALE">female</option>
-	           		 </select>&emsp;&emsp;&emsp;&emsp;&emsp;
-	            <button type="submit" class="btn btn-default">Search</button>
+	            <label>Er status by IHC : </label>
+	           		 <select name="er_status">
+		  		 <option value=""><?php if( isset($_GET['er_status']) && !empty($_GET['er_status'])) {echo $_GET['er_status']; }?></option>
+		  		 <option value="Positive">Positive</option>
+		  		<option value="Negative">Negative</option>
+	            		</select>&emsp;</br>
+	            <label>Pr status by IHC : </label>
+	           		 <select name="pr_status">
+		  		 <option value=""><?php if( isset($_GET['pr_status']) && !empty($_GET['pr_status'])) {echo $_GET['pr_status']; }?></option>
+		  		 <option value="Positive">Positive</option>
+		  		<option value="Negative">Negative</option>
+				<option value="Indeterminate">Indeterminate</option>
+	            		</select>&emsp;
+	            <label>Her2 status by IHC : </label>
+	            		<select name="her2_status">
+		  		 <option value=""><?php if( isset($_GET['her2_status']) && !empty($_GET['her2_status'])) {echo $_GET['her2_status']; }?></option>
+		   		<option value="Negative">Negative</option>
+				<option value="Positive">Positive</option>
+		  		 <option value="Equivocal">Equivocal</option>
+	           		 </select>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+	            <button type="submit" class="btn btn-default btn-sm active">
+		<span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Search</button>
 	          </form>
-      	</div>
-          
+      	</div></div>  </div>
           <div class="row">
          			   <?php
          			  while($image = $req->fetch()){ 
           			  ?> 
 		            <div class="col-sm-2 col-md-2">
 			 	<h2 class="titre"><?php echo $image['barcode'];?></h2>
-			 	<a href="dzi_img.php?titre=<?php echo $image['titre'];?>" ><img src='<?php echo $image['chemin'];?>' /></a>
+			 	<a href="dzi_img.php?titre=<?php echo $image['titre'];?>" ><img class="img-rounded" src='<?php echo $image['chemin'];?>' /></a>
 			 	<li class="dropdown">
 			   	<a class="btn btn-default" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View details <span class="caret"></span></a>
 			   	<ul class="dropdown-menu" role="menu">
@@ -88,9 +121,31 @@
 				       <li>Tumor status : <?php echo $image['tumor_status'];?></li>
 				       <li>Days to last followup : <?php echo $image['last_contact'];?></li>
 				       <li>Age at diagnosis : <?php echo $image['age_diagnosis'];?></li>
-				       <li>Er status by IHC : <?php echo $image['er_status'];?></li>
-				       <li>Pr status by IHC : <?php echo $image['pr_status'];?></li>
-				       <li>Her2 status by IHC : <?php echo $image['her2_status'];?></li>
+				      <li>Er Status by IHC: 
+			       		<?php if (strcmp($image['er_status'],'Negative')==0){ ?>
+				  		  <span class="label label-danger">Negative</span><br/>
+			       		<?php }else{ ?>
+					  <span class="label label-success">Positive</span><br/>
+			       		<?php } ?>
+				        </li>
+				      <li>Pr Status by IHC: 
+			       		<?php if (strcmp($image['pr_status'],'Negative')==0){ ?>
+				  		  <span class="label label-danger">Negative</span><br/>
+					<?php } elseif(strcmp($image['pr_status'],'Indeterminate')==0){?>
+						<span class="label label-warning">Indeterminate</span><br/>
+			       		<?php }else{ ?>
+					  <span class="label label-success">Positive</span><br/>
+			       		<?php } ?>
+				        </li>
+				      <li>Her2 Status by IHC: 
+			       		<?php if (strcmp($image['her2_status'],'Negative')==0){ ?>
+				  		  <span class="label label-danger">Negative</span><br/>
+					<?php } elseif(strcmp($image['her2_status'],'Equivocal')==0){?>
+						<span class="label label-warning">Equivocal</span><br/>
+			       		<?php }else{ ?>
+					  <span class="label label-success">Positive</span><br/>
+			       		<?php } ?>
+				        </li>
 				       <li>Histological type : <?php echo $image['histological_type'];?></li>
 			   	</ul>
 				</li>
