@@ -197,4 +197,4 @@ do
 	mysql -h localhost -u root -proot -D projet2a -e "INSERT INTO miniatures VALUES ('$titre', 'PhotoDzi/$chemin', '$xml','$lienPdf', '$barcode', '$gender', '$status', '$race', '$country', '$tumor', '$daysToBirth', '$daysToDeath','$TumorStatus', '$Contact', '$Age', '$ErStatusIhc', '$PrStatusIhc', '$Her2StatusIhc', '$HistologicalType');"
 done
 
-rm tmp
+rm tmp | rm lienPdfTmp.xml | rm patient.xml

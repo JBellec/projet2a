@@ -84,7 +84,7 @@
             <a href = <?php echo $image['pdf'];?> target ="_blank"><button type="button" class="btn btn-sm btn-info">Lien vers le PDF</button></a>
             </p>
 
-            <iframe src=<?php echo $image['pdf'];?> width="800" height="600" align="middle"></iframe>
+            <iframe src=<?php echo $image['pdf'];?> width="800" height="600" align="middle"></iframe><br/><br/>
             <?php
             $req->closeCursor();
             ?>
