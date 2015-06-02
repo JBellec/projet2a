@@ -25,6 +25,46 @@
       {
         $req = $bdd->query("SELECT * from miniatures where her2_status='".$her2_status."' AND vital_status='".$status."'");
       }
+      elseif( isset($_GET['her2_status']) && !empty($_GET['her2_status']) && isset($_GET['pr_status']) && !empty($_GET['pr_status']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where her2_status='".$her2_status."' AND pr_status='".$pr_status."'");
+      }
+      elseif( isset($_GET['her2_status']) && !empty($_GET['her2_status']) && isset($_GET['er_status']) && !empty($_GET['er_status']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where her2_status='".$her2_status."' AND er_status='".$er_status."'");
+      }
+      elseif( isset($_GET['er_status']) && !empty($_GET['er_status']) && isset($_GET['pr_status']) && !empty($_GET['pr_status']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where er_status='".$er_status."' AND pr_status='".$pr_status."'");
+      }
+      elseif( isset($_GET['status']) && !empty($_GET['status']) && isset($_GET['pr_status']) && !empty($_GET['pr_status']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where vital_status='".$status."' AND pr_status='".$pr_status."'");
+      }
+      elseif( isset($_GET['status']) && !empty($_GET['status']) && isset($_GET['pr_status']) && !empty($_GET['pr_status'])  && isset($_GET['er_status']) && !empty($_GET['er_status']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where vital_status='".$status."' AND pr_status='".$pr_status."' AND er_status='".$er_status."'");
+      }
+      elseif( isset($_GET['status']) && !empty($_GET['status']) && isset($_GET['er_status']) && !empty($_GET['er_status'])  && isset($_GET['her2_status']) && !empty($_GET['her2_status']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where vital_status='".$status."' AND er_status='".$er_status."' AND her2_status='".$her2_status."'");
+      }
+      elseif( isset($_GET['pr_status']) && !empty($_GET['pr_status']) && isset($_GET['er_status']) && !empty($_GET['er_status'])  && isset($_GET['her2_status']) && !empty($_GET['her2_status']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where pr_status='".$pr_status."' AND er_status='".$er_status."' AND her2_status='".$her2_status."'");
+      }
+      elseif( isset($_GET['pr_status']) && !empty($_GET['pr_status']) && isset($_GET['er_status']) && !empty($_GET['er_status'])  && isset($_GET['her2_status']) && !empty($_GET['her2_status']) && isset($_GET['status']) && !empty($_GET['status']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where pr_status='".$pr_status."' AND er_status='".$er_status."' AND her2_status='".$her2_status."' AND vital_status='".$status."'");
+      }
+      elseif( isset($_GET['status']) && !empty($_GET['status']) && isset($_GET['pr_status']) && !empty($_GET['pr_status'])  && isset($_GET['er_status']) && !empty($_GET['er_status']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where vital_status='".$status."' AND pr_status='".$pr_status."' AND er_status='".$er_status."'");
+      }
+      elseif( isset($_GET['status']) && !empty($_GET['status']) && isset($_GET['er_status']) && !empty($_GET['er_status']))
+      {
+        $req = $bdd->query("SELECT * from miniatures where vital_status='".$status."' AND er_status='".$er_status."'");
+      }
       elseif( isset($_GET['her2_status']) && !empty($_GET['her2_status']))
       {
         $req = $bdd->query("SELECT * from miniatures where her2_status='".$her2_status."'");
