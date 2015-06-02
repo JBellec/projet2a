@@ -131,8 +131,7 @@
 				<option value="Positive">Positive</option>
 		  		 <option value="Equivocal">Equivocal</option>
 	           		 </select>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-	            <button type="submit" class="btn btn-default btn-sm active">
-		<span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Search</button>
+	            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Search</button>
 	          </form>
       	</div></div>  </div>
           <div class="row">
