@@ -79,10 +79,12 @@
 			       	<?php }else{ ?>
 			<span class="label label-success">Positive</span><br/>
 			       	<?php } ?>
-                Histological type : <?php echo $image['histological_type'];?><br/>
+                Histological type : <?php echo $image['histological_type'];?><br/><br/>
 
-                Lien PDF : <a href = <?php echo $image['pdf'];?> target ="_blank">Cliquez ici</a>
+            <a href = <?php echo $image['pdf'];?> target ="_blank"><button type="button" class="btn btn-sm btn-info">Lien vers le PDF</button></a>
             </p>
+
+            <iframe src=<?php echo $image['pdf'];?> width="800" height="600" align="middle"></iframe>
             <?php
             $req->closeCursor();
             ?>
