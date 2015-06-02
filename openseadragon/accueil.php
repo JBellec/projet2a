@@ -139,36 +139,36 @@
          			   <?php
          			  while($image = $req->fetch()){ 
           			  ?> 
-		            <div class="col-sm-2 col-md-2">
+		            <div class="col-sm-2 col-md-2 col-lg-2">
 			 	<h2 class="titre"><?php echo $image['barcode'];?></h2>
 			 	<a href="dzi_img.php?titre=<?php echo $image['titre'];?>" ><img class="img-rounded" src='<?php echo $image['chemin'];?>' /></a>
 			 	<li class="dropdown">
-			   	<a class="btn btn-default" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View details <span class="caret"></span></a>
+			   	<a class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">View details <span class="caret"></span></a>
 			   	<ul class="dropdown-menu" role="menu">
-			     	      <li>Gender : <?php echo $image['genre'];?></li>
-			    	      <li>Status : 
+			     	      <li><b>Gender :  </b><?php echo $image['genre'];?></li>
+			    	      <li><b>Status :  </b>
 			       		<?php if (strcmp($image['vital_status'],'Dead')==0){ ?>
 				  		  <span class="label label-danger">Dead</span><br/>
 			       		<?php }else{ ?>
 					  <span class="label label-success">Alive</span><br/>
 			       		<?php } ?>
 				        </li>
-				        <li>Race : <?php echo $image['race'];?></li>
-				        <li>Country : <?php echo $image['pays'];?></li>
-				       <li>Tumor : <?php echo $image['tumeur'];?></li>
-				       <li>Days to birth : <?php echo $image['daysToBirth'];?></li>
-				       <li>Days to death : <?php echo $image['daysToDeath'];?></li>
-				       <li>Tumor status : <?php echo $image['tumor_status'];?></li>
-				       <li>Days to last followup : <?php echo $image['last_contact'];?></li>
-				       <li>Age at diagnosis : <?php echo $image['age_diagnosis'];?></li>
-				      <li>Er Status by IHC: 
+				        <li><b>Race : </b><?php echo $image['race'];?></li>
+				        <li><b>Country :  </b><?php echo $image['pays'];?></li>
+				       <li><b>Tumor :  </b><?php echo $image['tumeur'];?></li>
+				       <li><b>Days to birth :  </b><?php echo $image['daysToBirth'];?></li>
+				       <li><b>Days to death :  </b><?php echo $image['daysToDeath'];?></li>
+				       <li><b>Tumor status :  </b><?php echo $image['tumor_status'];?></li>
+				       <li><b>Days to last followup :  </b><?php echo $image['last_contact'];?></li>
+				       <li><b>Age at diagnosis :  </b><?php echo $image['age_diagnosis'];?></li>
+				      <li><b>Er Status by IHC:  </b>
 			       		<?php if (strcmp($image['er_status'],'Negative')==0){ ?>
 				  		  <span class="label label-danger">Negative</span><br/>
 			       		<?php }else{ ?>
 					  <span class="label label-success">Positive</span><br/>
 			       		<?php } ?>
 				        </li>
-				      <li>Pr Status by IHC: 
+				      <li><b>Pr Status by IHC:  </b>
 			       		<?php if (strcmp($image['pr_status'],'Negative')==0){ ?>
 				  		  <span class="label label-danger">Negative</span><br/>
 					<?php } elseif(strcmp($image['pr_status'],'Indeterminate')==0){?>
@@ -177,7 +177,7 @@
 					  <span class="label label-success">Positive</span><br/>
 			       		<?php } ?>
 				        </li>
-				      <li>Her2 Status by IHC: 
+				      <li><b>Her2 Status by IHC:  </b>
 			       		<?php if (strcmp($image['her2_status'],'Negative')==0){ ?>
 				  		  <span class="label label-danger">Negative</span><br/>
 					<?php } elseif(strcmp($image['her2_status'],'Equivocal')==0){?>
@@ -186,7 +186,7 @@
 					  <span class="label label-success">Positive</span><br/>
 			       		<?php } ?>
 				        </li>
-				       <li>Histological type : <?php echo $image['histological_type'];?></li>
+				       <li><b>Histological type :  </b><?php echo $image['histological_type'];?></li>
 			   	</ul>
 				</li>
 		            </div>

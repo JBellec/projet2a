@@ -1,9 +1,16 @@
+<?php include 'includes/connect_bdd.php';?>
+
+        <?php
+            $req = $bdd->query('SELECT * FROM miniatures WHERE titre=\'' . $_GET['titre'] . '\'');
+            $image = $req->fetch();
+        ?> 
 <!DOCTYPE html>
 <html>
     <head>
         <!-- En-tête de la page -->
         <meta charset="utf-8" />
-	 <title>Image</title>
+
+	 <title><?php echo $image['barcode'];?></title>
         <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     </head>
 
@@ -13,8 +20,8 @@
        <?php include 'includes/connect_bdd.php';?>
 
        <div class="container">
-       <div class="row">
-            <div id="container" class ="col-xs-5">
+       <div class="row" style="border:10px">
+            <div id="container" class ="col-xs-5 col-sm-9 col-lg-9">
             <div id="openseadragon1" style="width: 800px; height: 600px;"></div>
                 <script src="openseadragon.min.js"></script>
                 <script src="openseadragon.js"></script>
@@ -28,15 +35,12 @@
             
 
             </div>
-        </div>
+        
 
-        <div class="col-xs-3 col-sm-3" id="sidebar">
+        <div class="col-xs-12 col-sm-3 col-lg 3" id="sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
-            <?php
-            $req = $bdd->query('SELECT * FROM miniatures WHERE titre=\'' . $_GET['titre'] . '\'');
-            $image = $req->fetch();
-            ?> 
+            
             <p>
                 Title : <?php echo $image['barcode'];?><br/>
                 Gender : <?php echo $image['genre'];?><br/>
@@ -80,16 +84,20 @@
 			<span class="label label-success">Positive</span><br/>
 			       	<?php } ?>
                 Histological type : <?php echo $image['histological_type'];?><br/><br/>
-
-            <a href = <?php echo $image['pdf'];?> target ="_blank"><button type="button" class="btn btn-sm btn-info">Lien vers le PDF</button></a>
+            
+            <a href = <?php echo $image['xml'];?> target ="_blank"><button type="button" class="btn btn-sm btn-info">Lien vers les données du patient</button></a><br/><br/>
+        </div><!--/.sidebar-offcanvas-->
+    </div>
+    </div>
+            <a href = <?php echo $image['pdf'];?> target ="_blank"><button type="button" class="btn btn-sm btn-info">Lien vers le rapport de pathologie</button></a>
             </p>
 
             <iframe src=<?php echo $image['pdf'];?> width="800" height="600" align="middle"></iframe><br/><br/>
             <?php
             $req->closeCursor();
             ?>
-          </div>
-        </div><!--/.sidebar-offcanvas-->
+          
+        
        </div>
         
 
