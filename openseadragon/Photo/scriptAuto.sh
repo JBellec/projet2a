@@ -1,5 +1,8 @@
 #!/bin/bash 
 mysql -h localhost -u root -proot -D projet2a -e "DELETE FROM miniatures;"
+lienPdfTmp="https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/brca/bcr/nationwidechildrens.org/pathology_reports/reports/nationwidechildrens.org_BRCA.pathology_reports.Level_1.103.3.0/"
+curl $lienPdfTmp>lienPdfTmp.xml
+
 for fichier in $ls *.svs
 do	
 	#Conversion des images svs en Deep Zoom Image
@@ -14,8 +17,9 @@ do
 	echo $fichier >tmp
 	f=$(cut -d '-' -f 1-3 tmp)
 	xml="https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/brca/bcr/nationwidechildrens.org/bio/clin/nationwidechildrens.org_BRCA.bio.Level_1.103.62.0/nationwidechildrens.org_clinical.$f.xml"
-	
 	curl $xml>patient.xml
+	
+	
 
 	grep "<shared:bcr_patient_barcode .*>.*</.*>" <patient.xml>tmpBarcode.xml
 	sed "s/<shared:bcr_patient_barcode .*\">//" <tmpBarcode.xml>tmpBarcode2.xml
@@ -27,6 +31,16 @@ do
 	rm barcode |rm barcode2 | rm barcode3
 	echo $barcode
 
+	grep "$barcode" <lienPdfTmp.xml>pdf.xml
+	sed "s/<a .*\">//" <pdf.xml>pdf2.xml
+	sed "s/<\/a>.*//" <pdf2.xml>pdf3.xml
+	grep "$barcode" <pdf3.xml>pdf4.xml
+	sed "s/^\ \ *//" <pdf4.xml>pdf5.xml
+	tr -d '\r\n' < pdf5.xml > pdf6.xml
+	pdf=$(<pdf6.xml)
+	rm pdf.xml | rm pdf2.xml| rm pdf3.xml| rm pdf4.xml| rm pdf5.xml| rm pdf6.xml
+	lienPdf="https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/brca/bcr/nationwidechildrens.org/pathology_reports/reports/nationwidechildrens.org_BRCA.pathology_reports.Level_1.103.3.0/$pdf"
+	echo $pdf
 
 
 	grep "<shared:gender .*>.*</.*>" <patient.xml>tmpGender.xml
@@ -180,7 +194,7 @@ do
 
 
 
-	mysql -h localhost -u root -proot -D projet2a -e "INSERT INTO miniatures VALUES ('$titre', 'PhotoDzi/$chemin', '$xml', '$barcode', '$gender', '$status', '$race', '$country', '$tumor', '$daysToBirth', '$daysToDeath','$TumorStatus', '$Contact', '$Age', '$ErStatusIhc', '$PrStatusIhc', '$Her2StatusIhc', '$HistologicalType');"
+	mysql -h localhost -u root -proot -D projet2a -e "INSERT INTO miniatures VALUES ('$titre', 'PhotoDzi/$chemin', '$xml','$lienPdf', '$barcode', '$gender', '$status', '$race', '$country', '$tumor', '$daysToBirth', '$daysToDeath','$TumorStatus', '$Contact', '$Age', '$ErStatusIhc', '$PrStatusIhc', '$Her2StatusIhc', '$HistologicalType');"
 done
 
 rm tmp

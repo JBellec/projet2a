@@ -80,6 +80,8 @@
 			<span class="label label-success">Positive</span><br/>
 			       	<?php } ?>
                 Histological type : <?php echo $image['histological_type'];?><br/>
+
+                Lien PDF : <a href = <?php echo $image['pdf'];?> target ="_blank">Cliquez ici</a>
             </p>
             <?php
             $req->closeCursor();
