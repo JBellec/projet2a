@@ -23,8 +23,8 @@
        <div class="row" style="border:10px">
             <div id="container" class ="col-xs-5 col-sm-9 col-lg-9">
             <div id="openseadragon1" style="width: 800px; height: 600px;"></div>
-                <script src="openseadragon.min.js"></script>
-                <script src="openseadragon.js"></script>
+                <script src="openseadragon/openseadragon.min.js"></script>
+                
                 <script type="text/javascript">
                     var viewer = OpenSeadragon({
                     id: "openseadragon1",

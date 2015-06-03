@@ -1,6 +1,6 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/connect_bdd.php';?>
- <link href="carousel.css" rel="stylesheet">
+ <link href="css/carousel.css" rel="stylesheet">
 <body>
  <title>A propos</title>
   <?php include 'includes/navbar.php' ;?>

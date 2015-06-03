@@ -1,6 +1,6 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/connect_bdd.php';?>
- <link href="style.css" rel="stylesheet">
+ <link href="css/style.css" rel="stylesheet">
   <?php
    try
     {
@@ -25,6 +25,7 @@
       MySQL <br />
       phpMyAdmin <br />
     </p>
+    
   </div>
   </body>
 </html>

@@ -131,7 +131,7 @@
 				<option value="Positive">Positive</option>
 		  		 <option value="Equivocal">Equivocal</option>
 	           		 </select>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-	            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Search</button>
+	            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Search</button>
 	          </form>
       	</div></div>  </div>
           <div class="row">
@@ -145,29 +145,29 @@
         <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">View Details
         <span class="caret"></span></button>
         <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="menu1">
-          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Gender :  </b><?php echo $image['genre'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Status :  </b>
+          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Gender :  </b><?php echo $image['genre'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Status :  </b>
                 <?php if (strcmp($image['vital_status'],'Dead')==0){ ?>
                 <span class="label label-danger">Dead</span><br/>
                 <?php }else{ ?>
             <span class="label label-success">Alive</span><br/>
                 <?php } ?>
                 </a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Race : </b><?php echo $image['race'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Country :  </b><?php echo $image['pays'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Tumor :  </b><?php echo $image['tumeur'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Days to birth :  </b><?php echo $image['daysToBirth'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Days to death :  </b><?php echo $image['daysToDeath'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Tumor status :  </b><?php echo $image['tumor_status'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Days to last followup :  </b><?php echo $image['last_contact'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Age at diagnosis :  </b><?php echo $image['age_diagnosis'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Er Status by IHC:  </b>
+          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Race : </b><?php echo $image['race'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Country :  </b><?php echo $image['pays'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Tumor :  </b><?php echo $image['tumeur'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Days to birth :  </b><?php echo $image['daysToBirth'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Days to death :  </b><?php echo $image['daysToDeath'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Tumor status :  </b><?php echo $image['tumor_status'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Days to last followup :  </b><?php echo $image['last_contact'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Age at diagnosis :  </b><?php echo $image['age_diagnosis'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Er Status by IHC:  </b>
                 <?php if (strcmp($image['er_status'],'Negative')==0){ ?>
                 <span class="label label-danger">Negative</span><br/>
                 <?php }else{ ?>
             <span class="label label-success">Positive</span><br/>
                 <?php } ?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Pr Status by IHC:  </b>
+          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Pr Status by IHC:  </b>
                 <?php if (strcmp($image['pr_status'],'Negative')==0){ ?>
                 <span class="label label-danger">Negative</span><br/>
           <?php } elseif(strcmp($image['pr_status'],'Indeterminate')==0){?>
@@ -175,7 +175,7 @@
                 <?php }else{ ?>
             <span class="label label-success">Positive</span><br/>
                 <?php } ?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Her2 Status by IHC:  </b>
+          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Her2 Status by IHC:  </b>
                 <?php if (strcmp($image['her2_status'],'Negative')==0){ ?>
                 <span class="label label-danger">Negative</span><br/>
           <?php } elseif(strcmp($image['her2_status'],'Equivocal')==0){?>
@@ -183,7 +183,7 @@
                 <?php }else{ ?>
             <span class="label label-success">Positive</span><br/>
                 <?php } ?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Histological type :  </b><?php echo $image['histological_type'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Histological type :  </b><?php echo $image['histological_type'];?></a></li>
         </ul>
   </div>
 		            </div>
