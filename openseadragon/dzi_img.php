@@ -28,7 +28,7 @@
                 <script type="text/javascript">
                     var viewer = OpenSeadragon({
                     id: "openseadragon1",
-                    prefixUrl: "images/",
+                    prefixUrl: "openseadragon/images/",
                     tileSources:"PhotoDzi/<?php echo $_GET['titre'];?>.dzi"
                     });
                 </script>

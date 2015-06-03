@@ -1,5 +1,11 @@
 #!/bin/bash 
-mysql -h localhost -u root -proot -D projet2a -e "DELETE FROM miniatures;"
+echo "===== Script d'automatisation ====="
+echo "Veuillez saisir le nom d'utilisteur de votre base de données : "
+read user
+echo "Veuillez saisir le mot de passe de votre base de données : "
+read -s password
+
+mysql -h localhost -u $user -p$password -D projet2a -e "DELETE FROM miniatures;"
 lienPdfTmp="https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/brca/bcr/nationwidechildrens.org/pathology_reports/reports/nationwidechildrens.org_BRCA.pathology_reports.Level_1.103.3.0/"
 curl $lienPdfTmp>lienPdfTmp.xml
 
@@ -194,7 +200,7 @@ do
 
 
 
-	mysql -h localhost -u root -proot -D projet2a -e "INSERT INTO miniatures VALUES ('$titre', 'PhotoDzi/$chemin', '$xml','$lienPdf', '$barcode', '$gender', '$status', '$race', '$country', '$tumor', '$daysToBirth', '$daysToDeath','$TumorStatus', '$Contact', '$Age', '$ErStatusIhc', '$PrStatusIhc', '$Her2StatusIhc', '$HistologicalType');"
+	mysql -h localhost -u $user -p$password -D projet2a -e "INSERT INTO miniatures VALUES ('$titre', 'PhotoDzi/$chemin', '$xml','$lienPdf', '$barcode', '$gender', '$status', '$race', '$country', '$tumor', '$daysToBirth', '$daysToDeath','$TumorStatus', '$Contact', '$Age', '$ErStatusIhc', '$PrStatusIhc', '$Her2StatusIhc', '$HistologicalType');"
 done
 
 rm tmp | rm lienPdfTmp.xml | rm patient.xml
