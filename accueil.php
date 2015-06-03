@@ -13,7 +13,32 @@
 ?> 
 <body>
  <title>Accueil</title>
-  <?php include 'includes/navbar.php' ;?>
+  <div class="container">
+        <!-- Static navbar -->
+        <div class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand"><i class="fa fa-home"></i> PWPN </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav"> 
+                      <li class="active"><a href="accueil.php">Accueil</a></li>
+                      <li><a href="apropos.php">A propos</a></li>
+                      <li><a href="tutoriel.php">Tutoriel</a></li>                 
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </div>
+    </div><!--/.container -->
+    
 <?php
       $i=0;  
       $her2_status = isset($_GET['her2_status']) && !empty($_GET['her2_status']) ? $_GET['her2_status']: '';
@@ -145,29 +170,29 @@
         <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">View Details
         <span class="caret"></span></button>
         <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="menu1">
-          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Gender :  </b><?php echo $image['genre'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Status :  </b>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Gender :  </b><?php echo $image['genre'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Status :  </b>
                 <?php if (strcmp($image['vital_status'],'Dead')==0){ ?>
                 <span class="label label-danger">Dead</span><br/>
                 <?php }else{ ?>
             <span class="label label-success">Alive</span><br/>
                 <?php } ?>
                 </a></li>
-          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Race : </b><?php echo $image['race'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Country :  </b><?php echo $image['pays'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Tumor :  </b><?php echo $image['tumeur'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Days to birth :  </b><?php echo $image['daysToBirth'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Days to death :  </b><?php echo $image['daysToDeath'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Tumor status :  </b><?php echo $image['tumor_status'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Days to last followup :  </b><?php echo $image['last_contact'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Age at diagnosis :  </b><?php echo $image['age_diagnosis'];?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Er Status by IHC:  </b>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Race : </b><?php echo $image['race'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Country :  </b><?php echo $image['pays'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Tumor :  </b><?php echo $image['tumeur'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Days to birth :  </b><?php echo $image['daysToBirth'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Days to death :  </b><?php echo $image['daysToDeath'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Tumor status :  </b><?php echo $image['tumor_status'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Days to last followup :  </b><?php echo $image['last_contact'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Age at diagnosis :  </b><?php echo $image['age_diagnosis'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Er Status by IHC:  </b>
                 <?php if (strcmp($image['er_status'],'Negative')==0){ ?>
                 <span class="label label-danger">Negative</span><br/>
                 <?php }else{ ?>
             <span class="label label-success">Positive</span><br/>
                 <?php } ?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Pr Status by IHC:  </b>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Pr Status by IHC:  </b>
                 <?php if (strcmp($image['pr_status'],'Negative')==0){ ?>
                 <span class="label label-danger">Negative</span><br/>
           <?php } elseif(strcmp($image['pr_status'],'Indeterminate')==0){?>
@@ -175,7 +200,7 @@
                 <?php }else{ ?>
             <span class="label label-success">Positive</span><br/>
                 <?php } ?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Her2 Status by IHC:  </b>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Her2 Status by IHC:  </b>
                 <?php if (strcmp($image['her2_status'],'Negative')==0){ ?>
                 <span class="label label-danger">Negative</span><br/>
           <?php } elseif(strcmp($image['her2_status'],'Equivocal')==0){?>
@@ -183,7 +208,7 @@
                 <?php }else{ ?>
             <span class="label label-success">Positive</span><br/>
                 <?php } ?></a></li>
-          <li role="presentation"><a role="menuitem" tabindex="0" ><b>Histological type :  </b><?php echo $image['histological_type'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Histological type :  </b><?php echo $image['histological_type'];?></a></li>
         </ul>
   </div>
 		            </div>
@@ -200,4 +225,12 @@
        ?>     
     </div><!--/.container-->
   </body>
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 </html>

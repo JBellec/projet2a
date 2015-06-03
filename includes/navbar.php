@@ -15,8 +15,8 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav"> 
                       <li class="active"><a href="accueil.php">Accueil</a></li>
-                      <li><a href="apropos.php">A propos</a></li>
-                      <li><a href="tutoriel.php">Tutoriel</a></li>                 
+                      <li class="active"><a href="apropos.php">A propos</a></li>
+                      <li class="active"><a href="tutoriel.php">Tutoriel</a></li>                 
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                     </ul>
