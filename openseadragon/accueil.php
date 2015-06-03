@@ -144,7 +144,7 @@
 			 	<div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">View Details
         <span class="caret"></span></button>
-        <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="menu1">
+        <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="menu1">
           <li role="presentation"><a role="menuitem" tabindex="0" ><b>Gender :  </b><?php echo $image['genre'];?></a></li>
           <li role="presentation"><a role="menuitem" tabindex="0" ><b>Status :  </b>
                 <?php if (strcmp($image['vital_status'],'Dead')==0){ ?>
