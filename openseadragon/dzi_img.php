@@ -42,9 +42,9 @@
             <h4>About</h4>
             
             <p>
-                Title : <?php echo $image['barcode'];?><br/>
-                Gender : <?php echo $image['genre'];?><br/>
-                Status :
+                <b>Title : </b><?php echo $image['barcode'];?><br/>
+                <b>Gender : </b><?php echo $image['genre'];?><br/>
+                <b>Status : </b>
                 <?php if (strcmp($image['vital_status'],'Dead')==0){ ?>
                 <span class="label label-danger">Dead</span><br/>
                 <?php }else{ ?>
@@ -53,21 +53,21 @@
 
                 <?php } ?>
                 
-                Race : <?php echo $image['race'];?><br/>
-                Country : <?php echo $image['pays'];?><br/>
-                Tumor : <?php echo $image['tumeur'];?><br/>
-                Days to birth : <?php echo $image['daysToBirth'];?><br/>
-                Days to death : <?php echo $image['daysToDeath'];?><br/>
-                Tumor status : <?php echo $image['tumor_status'];?><br/>
-                Days to last followup : <?php echo $image['last_contact'];?><br/>
-                Age at diagnosis : <?php echo $image['age_diagnosis'];?><br/>
-                Er status by IHC : 
+                <b>Race : </b><?php echo $image['race'];?><br/>
+                <b>Country : </b><?php echo $image['pays'];?><br/>
+                <b>Tumor : </b><?php echo $image['tumeur'];?><br/>
+                <b>Days to birth : </b><?php echo $image['daysToBirth'];?><br/>
+                <b>Days to death : </b><?php echo $image['daysToDeath'];?><br/>
+                <b>Tumor status : </b><?php echo $image['tumor_status'];?><br/>
+                <b>Days to last followup : </b><?php echo $image['last_contact'];?><br/>
+                <b>Age at diagnosis : </b><?php echo $image['age_diagnosis'];?><br/>
+                <b>Er status by IHC : </b>
 		<?php if (strcmp($image['er_status'],'Negative')==0){ ?>
 			<span class="label label-danger">Negative</span><br/>
 			      <?php }else{ ?>
 			 <span class="label label-success">Positive</span><br/>
 			       <?php } ?>
-                Pr status by IHC : 			       		
+                <b>Pr status by IHC : </b>			       		
 		<?php if (strcmp($image['pr_status'],'Negative')==0){ ?>
 			<span class="label label-danger">Negative</span><br/>
 				<?php } elseif(strcmp($image['pr_status'],'Indeterminate')==0){?>
@@ -75,7 +75,7 @@
 			       	<?php }else{ ?>
 			<span class="label label-success">Positive</span><br/>
 			       	<?php } ?>
-                Her2 status by IHC : 
+                <b>Her2 status by IHC : </b>
 		<?php if (strcmp($image['her2_status'],'Negative')==0){ ?>
 			<span class="label label-danger">Negative</span><br/>
 				<?php } elseif(strcmp($image['her2_status'],'Equivocal')==0){?>
@@ -83,7 +83,7 @@
 			       	<?php }else{ ?>
 			<span class="label label-success">Positive</span><br/>
 			       	<?php } ?>
-                Histological type : <?php echo $image['histological_type'];?><br/><br/>
+                <b>Histological type : </b><?php echo $image['histological_type'];?><br/><br/>
             
             <a href = <?php echo $image['xml'];?> target ="_blank"><button type="button" class="btn btn-sm btn-info">Lien vers les données du patient</button></a><br/><br/>
         </div><!--/.sidebar-offcanvas-->
