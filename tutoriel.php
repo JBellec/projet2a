@@ -1,6 +1,6 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/connect_bdd.php';?>
- <link href="css/style.css" rel="stylesheet">
+ <!--<link href="css/style.css" rel="stylesheet">-->
   <?php
    try
     {
@@ -55,17 +55,20 @@
 
       <!-- Three columns of text below the carousel -->
       <div class="row">
-        <h2>Prérequis</h2>
+        <h2>Prérequis</h2><br /><br />
+
+        <div class="col-lg-2">
+          <img class="img-rounded" src="Logo/apache.png" alt="Generic placeholder image" width="140" height="140">
+          <h3>Serveur Apache 2</h3>        
+        </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-2">
           <img class="img-rounded" src="Logo/ubuntu.png" alt="Generic placeholder image" width="140" height="140">
           <h3>Ubuntu</h3>        
         </div><!-- /.col-lg-4 -->
 
-        <div class="col-lg-2">
-          <img class="img-rounded" src="Logo/apache.png" alt="Generic placeholder image" width="140" height="140">
-          <h3>Serveur Apache 2</h3>        
-        </div><!-- /.col-lg-4 -->
+        
+
         <div class="col-lg-2">
           <img class="img-rounded" src="Logo/MySQL.png" alt="Generic placeholder image" width="140" height="140">
           <h2>MySQL 5.5</h2>
