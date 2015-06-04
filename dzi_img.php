@@ -32,8 +32,8 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav"> 
                       <li><a href="accueil.php">Accueil</a></li>
-                      <li><a href="apropos.php">A propos</a></li>
-                      <li><a href="tutoriel.php">Tutoriel</a></li>                 
+                      <li><a href="tutoriel.php">Tutoriel</a></li>
+                      <li><a href="apropos.php">A propos</a></li>     
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                     </ul>
@@ -45,7 +45,7 @@
 
        <div class="container">
        <div class="row" style="border:10px">
-            <div id="container" class ="col-xs-5 col-sm-9 col-lg-9">
+            <div id="container" class ="col-xs-12 col-sm-9 col-lg-9">
             <div id="openseadragon1" style="width: 800px; height: 600px;"></div>
                 <script src="openseadragon/openseadragon.min.js"></script>
                 
@@ -53,7 +53,7 @@
                     var viewer = OpenSeadragon({
                     id: "openseadragon1",
                     prefixUrl: "openseadragon/images/",
-                    tileSources:"PhotoDzi/<?php echo $_GET['titre'];?>.dzi"
+                    tileSources:"ImageDzi/<?php echo $_GET['titre'];?>.dzi"
                     });
                 </script>
             
@@ -61,7 +61,7 @@
             </div>
         
 
-        <div class="col-xs-12 col-sm-3 col-lg 3" id="sidebar">
+        <div class="col-xs-12 col-sm-12 col-md-3 col-lg 3" id="sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
             
@@ -108,7 +108,8 @@
 			<span class="label label-success">Positive</span><br/>
 			       	<?php } ?>
                 <b>Histological type : </b><?php echo $image['histological_type'];?><br/><br/>
-            
+
+        
             <a href = <?php echo $image['xml'];?> target ="_blank"><button type="button" class="btn btn-sm btn-info">Lien vers les données du patient</button></a><br/><br/>
         </div><!--/.sidebar-offcanvas-->
     </div>

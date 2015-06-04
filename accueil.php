@@ -29,8 +29,8 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav"> 
                       <li class="active"><a href="accueil.php">Accueil</a></li>
-                      <li><a href="apropos.php">A propos</a></li>
-                      <li><a href="tutoriel.php">Tutoriel</a></li>                 
+                      <li><a href="tutoriel.php">Tutoriel</a></li>
+                      <li><a href="apropos.php">A propos</a></li>                                       
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                     </ul>
@@ -166,7 +166,7 @@
 		            <div class="col-sm-2 col-md-2 col-lg-2">
 			 	<h2 class="titre"><?php echo $image['barcode'];?></h2>
 			 	<a href="dzi_img.php?titre=<?php echo $image['titre'];?>" ><img class="img-rounded" src='<?php echo $image['chemin'];?>' /></a>
-			 	<div class="dropdown">
+			 	<div class="dropdown"><br />
         <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">View Details
         <span class="caret"></span></button>
         <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="menu1">
@@ -222,9 +222,13 @@
                  } }
              
          $req->closeCursor();
-       ?>     
+       ?> 
+
     </div><!--/.container-->
   </body>
+  <footer>
+    <br />
+  </footer>
 
   <!-- Bootstrap core JavaScript
     ================================================== -->
