@@ -121,7 +121,7 @@
         <div class="col-md-7">
           <h2 class="featurette-heading">Téléchargement et installation des paquets nécessaires</h2>
           <p class="lead">Il vous faudra installer une librairie de traitement d'image qui se nomme Vips pour la conversion des images SVS.<br />
-      Pour cela, ouvrez un terminal et tapez la commande "sudo apt-get libvips-tools".<br />
+      Pour cela, ouvrez un terminal et tapez la commande "sudo apt-get install libvips-tools".<br />
       Une fois installé, il vous faudra OpenSeaDragon pour visualiser les images converties. Normalement le dossier openseadragon est déjà présent grâce à l'étape <a href ="#step1" >"Création des dossiers nécessaires"</a>. Sinon vous pouvez le télécharger ici : 
       <a href = "https://openseadragon.github.io/#download" target ="_blank"><button type="button" class="btn btn-sm btn-info">Télécharger OpenSeaDragon</button></a>
       et copiez le dossier au même endroit que les dossiers Image et ImageDzi.<br /> Attention ! Si vous télécharger OpenSeaDragon pensez à changer le nom du dossier openseadragon-bin-version.zip en openseadragon.</p>
@@ -136,9 +136,9 @@
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
           <h2 class="featurette-heading">Execution du script d'automatisation</h2>
-          <p class="lead">Avant d'exécuter le fichier scriptAuto.sh, déplacez le dans le dossier Image. A l'aide d'un terminal rendez-vous dans ce dossier puis exécuter le script à l'aide de la commande ./scriptAuto.sh. On vous demande de saisir les identifiants de votre base de données.
-      Si c'est la première fois que vous exécuter le script, le processus peut prendre du temps car il doit convertir toutes les photos.<br />
-      Vous pouvez maintenant observer les photos dans votre navigateur internet. </p>
+          <p class="lead">A l'aide d'un terminal rendez-vous dans le dossier Image puis exécuter le fichier "scriptAuto.sh" à l'aide de la commande ./scriptAuto.sh. On vous demande de saisir les identifiants de votre base de données.
+      Si c'est la première fois que vous exécutez le script, le processus peut prendre du temps car il doit convertir toutes les images.<br />
+      Vous pouvez maintenant observer les images dans votre navigateur internet. </p>
         </div>
         <div class="col-md-5 col-md-pull-7">
           <img class="featurette-image img-responsive center-block" src="Logo/screenStep4.png" alt="Generic placeholder image"> <br/>
