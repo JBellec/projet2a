@@ -40,53 +40,121 @@
         </div>
     </div><!--/.container -->
     
-  <div class="container">
-    <div class="jumbotron">
-      <h2>Tutoriel d'utilisation de la plateforme web de pathologie </h2>
+    <div class="container">
+      <div class="jumbotron">
+        <h2>Tutoriel d'utilisation de la plateforme web de pathologie </h2>
+      </div>
     </div>
 
-    <h3>Prérequis</h3>
-    <p>
-      Serveur Apache <br />
-      MySQL <br />
-      phpMyAdmin <br />
-    </p>
-    <h3>Création des dossiers nécessaires</h3>
-    <p>
-        Commencez par télécharger le projet github suivant : 
+
+<!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <h2>Prérequis</h2>
+
+        <div class="col-lg-2">
+          <img class="img-rounded" src="Logo/ubuntu.png" alt="Generic placeholder image" width="140" height="140">
+          <h3>Ubuntu</h3>        
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-2">
+          <img class="img-rounded" src="Logo/apache.png" alt="Generic placeholder image" width="140" height="140">
+          <h3>Serveur Apache 2</h3>        
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-2">
+          <img class="img-rounded" src="Logo/MySQL.png" alt="Generic placeholder image" width="140" height="140">
+          <h2>MySQL 5.5</h2>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-2">
+          <img class="img-rounded" src="Logo/phpMyAdmin.png" alt="Generic placeholder image" width="140" height="140">
+          <h2>phpMyAdmin 4.4.8</h2>
+        </div><!-- /.col-lg-4 -->
+
+        <div class="col-lg-2">
+          <img class="img-rounded" src="Logo/OpenSeadragon.png" alt="Generic placeholder image" width="140" height="140">
+          <h2>OpenSeadragon 2.0.0</h2>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading" id="step1">Création des dossiers nécessaires</h2>
+          <p class="lead"> Commencez par télécharger le projet github suivant : 
         <a href = "https://github.com/Tumai/projet2a" target ="_blank"><button type="button" class="btn btn-sm btn-info">Télécharger le projet</button></a><br />
-        Puis copier le projet dans le dossier www de votre serveur web.
-        Le dossier Photo contiendra les photos aux formats SVS. Ces photos sont disponibles sur le site The Cancer Genome Atlas ici : 
-        <a href = "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/brca/bcr/nationwidechildrens.org/diagnostic_images/slide_images/" target ="_blank"><button type="button" class="btn btn-sm btn-info">Télécharger les photos</button></a>.<br />
-        Créez un dossier PhotoDzi qui permettra de stocker les images converties.
-    </p><br />
+        Puis copiez le projet dans le dossier www de votre serveur web.
+        Le dossier Image contiendra les images aux formats SVS. Ces images sont disponibles sur le site The Cancer Genome Atlas ici : 
+        <a href = "https://tcga-data.nci.nih.gov/tcgafiles/ftp_auth/distro_ftpusers/anonymous/tumor/brca/bcr/nationwidechildrens.org/diagnostic_images/slide_images/" target ="_blank"><button type="button" class="btn btn-sm btn-info">Télécharger les images</button></a>.<br />
+        Créez un dossier ImageDzi qui permettra de stocker les images converties.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="Logo/screenStep1.png" alt="Generic placeholder image">
+        </div>
+      </div>
 
-    <h3>Création de la base de données</h3>
-    <p>
-      Pour créer la base données, exécutez le fichier scriptBDD.sh,situé dans le dossier de votre serveur web, à l'aide de la commande ./scriptBDD.sh.
-      <br />
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Création de la base de données</h2>
+          <p class="lead">Pour créer la base données, exécutez le fichier scriptBDD.sh,situé dans le dossier de votre serveur web, à l'aide de la commande "./scriptBDD.sh".
       Saisissez les identifiants de votre base de données.<br/>
-      La base de données est maintenant opérationnelle.
-    </p><br />
+      La base de données est maintenant opérationnelle.</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" src="Logo/screenStep2.png" alt="Generic placeholder image">
+        </div>
+      </div>
 
-    <h3>Téléchargement et installation des paquets nécessaires</h3>
-    <p>
-      Il vous faudra installer une librairie de traitement d'image qui se nomme Vips pour la conversion des images SVS.<br />
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Téléchargement et installation des paquets nécessaires</h2>
+          <p class="lead">Il vous faudra installer une librairie de traitement d'image qui se nomme Vips pour la conversion des images SVS.<br />
       Pour cela, ouvrez un terminal et tapez la commande "sudo apt-get libvips-tools".<br />
-      Une fois installé, il vous faudra OpenSeaDragon pour visualiser les images converties. Normalement le dossier openseadragon est déjà présent grâce à la première étape. Sinon vous pouvez le télécharger ici : 
+      Une fois installé, il vous faudra OpenSeaDragon pour visualiser les images converties. Normalement le dossier openseadragon est déjà présent grâce à l'étape <a href ="#step1" >"Création des dossiers nécessaires"</a>. Sinon vous pouvez le télécharger ici : 
       <a href = "https://openseadragon.github.io/#download" target ="_blank"><button type="button" class="btn btn-sm btn-info">Télécharger OpenSeaDragon</button></a>
-      et copiez le dossier au même endroit que les dossiers Photo et PhotoDzi.<br /> Attention ! Si vous télécharger OpenSeaDragon pensez à changer le nom du dossier openseadragon-bin-version.zip en openseadragon.
-    </p><br/>
+      et copiez le dossier au même endroit que les dossiers Image et ImageDzi.<br /> Attention ! Si vous télécharger OpenSeaDragon pensez à changer le nom du dossier openseadragon-bin-version.zip en openseadragon.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src="Logo/screenStep3.png" alt="Generic placeholder image">
+        </div>
+      </div>
 
-    <h3>Execution du script d'automatisation</h3>
-    <p>
-      Avant d'exécuter le fichier scriptAuto.sh, déplacez le dans le dossier Photo. A l'aide d'un terminal rendez-vous dans ce dossier puis exécuter le script à l'aide de la commande ./scriptAuto.sh. On vous demande de saisir les identifiants de votre base de données.
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Execution du script d'automatisation</h2>
+          <p class="lead">Avant d'exécuter le fichier scriptAuto.sh, déplacez le dans le dossier Image. A l'aide d'un terminal rendez-vous dans ce dossier puis exécuter le script à l'aide de la commande ./scriptAuto.sh. On vous demande de saisir les identifiants de votre base de données.
       Si c'est la première fois que vous exécuter le script, le processus peut prendre du temps car il doit convertir toutes les photos.<br />
-      Vous pouvez maintenant observer les photos dans votre navigateur internet.
-    </p>
-    
-  </div>
+      Vous pouvez maintenant observer les photos dans votre navigateur internet. </p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" src="Logo/screenStep4.png" alt="Generic placeholder image"> <br/>
+          <img class="featurette-image img-responsive center-block" src="Logo/screenStep4.1.png" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <!-- /END THE FEATURETTES -->
+
   </body>
+
+      <!-- FOOTER -->
+      <footer>
+        <br/>
+      </footer>
+
 
   <!-- Bootstrap core JavaScript
     ================================================== -->
