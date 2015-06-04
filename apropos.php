@@ -32,7 +32,7 @@
     <div class="container">
       	<div class="jumbotron">
         		<h3>Plateforme Web de Pathologie Numérique</h3><br/>
-	</div>
+	     </div>
 
 <!-- Carousel
     ================================================== -->

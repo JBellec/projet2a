@@ -42,7 +42,7 @@
     
     <div class="container">
       <div class="jumbotron">
-        <h2>Tutoriel d'utilisation de la plateforme web de pathologie </h2>
+        <h3>Tutoriel d'utilisation de la plateforme web de pathologie </h3>
       </div>
     </div>
 
