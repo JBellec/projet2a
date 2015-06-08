@@ -64,8 +64,8 @@
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg 3" id="sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <div class="list-group">                
-                <a href="#" class="list-group-item active">About</a>    
-                <a href="#" class="list-group-item"><b>Title : </b><?php echo $image['barcode'];?></a>
+                <a href="#" class="list-group-item active">Données patient</a>    
+                <a href="#" class="list-group-item"><b>Barcode : </b><?php echo $image['barcode'];?></a>
                 <a href="#" class="list-group-item"><b>Gender : </b><?php echo $image['genre'];?></a>
                 <a href="#" class="list-group-item"><b>Status : </b>
                 <?php if (strcmp($image['vital_status'],'Dead')==0){ ?>

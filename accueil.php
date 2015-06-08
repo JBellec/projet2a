@@ -130,7 +130,7 @@
 	          <form class="form-inline" method ="get" action ="accueil.php">
 	            <label>Barcode : </label>
 	            		<input name ="barcode" type ="text" placeholder ="TCGA-**-****" size="13"/>&emsp;
-	            <label>Status vital : </label>
+	            <label>Vital status : </label>
 	           		 <select name="status">
 		  		 <option value=""><?php if( isset($_GET['status']) && !empty($_GET['status'])) {echo $_GET['status']; }?></option>
 		  		 <option value="Dead">Dead</option>
@@ -167,7 +167,7 @@
 			 	<h2 class="titre"><?php echo $image['barcode'];?></h2>
 			 	<a href="dzi_img.php?titre=<?php echo $image['titre'];?>" ><img class="img-rounded" src='<?php echo $image['chemin'];?>' /></a>
 			 	<div class="dropdown"><br />
-        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">View Details
+        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Details
         <span class="caret"></span></button>
         <ul class="dropdown-menu dropdown-menu-left" role="menu" aria-labelledby="menu1">
           <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Gender :  </b><?php echo $image['genre'];?></a></li>
