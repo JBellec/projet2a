@@ -1,6 +1,7 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/connect_bdd.php';?>
  <link href="css/carousel.css" rel="stylesheet">
+ <link href="css/style.css" rel="stylesheet">
 <body>
  <title>A propos</title>
   <div class="container">
@@ -92,6 +93,11 @@
 
     </div><!--/.container-->
   </body>
+
+  <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#"><button type="button" class="btn btn-default">Back to top</button></a></p>
+      </footer>
   <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

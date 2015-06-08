@@ -153,9 +153,9 @@
 
   </body>
 
-      <!-- FOOTER -->
+    <!-- FOOTER -->
       <footer>
-        <br/>
+        <p class="pull-right"><a href="#"><button type="button" class="btn btn-default">Back to top</button></a></p>
       </footer>
 
 

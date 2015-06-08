@@ -226,9 +226,11 @@
 
     </div><!--/.container-->
   </body>
-  <footer>
-    <br />
-  </footer>
+
+    <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#"><button type="button" class="btn btn-default">Back to top</button></a></p>
+      </footer>
 
   <!-- Bootstrap core JavaScript
     ================================================== -->

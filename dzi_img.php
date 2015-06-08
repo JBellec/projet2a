@@ -124,6 +124,11 @@
        </div>
     </body>
 
+    <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><a href="#"><button type="button" class="btn btn-default">Back to top</button></a></p>
+      </footer>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
