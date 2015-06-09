@@ -4,8 +4,8 @@ echo "Veuillez saisir le nom d'utilisateur de votre base de données"
 read user
 echo "Veuillez saisir le mot de passe de votre base de données"
 read -s password
-mysql -h localhost -u $user -p$password -e "CREATE DATABASE projet2a CHARACTER SET 'utf8';"
-mysql -h localhost -u $user -p$password -D projet2a -e "CREATE TABLE IF NOT EXISTS miniatures (
+mysql -h localhost -u $user -p$password -e "CREATE DATABASE projet2aMaster CHARACTER SET 'utf8';"
+mysql -h localhost -u $user -p$password -D projet2aMaster -e "CREATE TABLE IF NOT EXISTS miniatures (
   titre varchar(255) NOT NULL,
   chemin text NOT NULL,
   xml text NOT NULL,
@@ -24,5 +24,9 @@ mysql -h localhost -u $user -p$password -D projet2a -e "CREATE TABLE IF NOT EXIS
   er_status varchar(255) NOT NULL,
   pr_status varchar(255) NOT NULL,
   her2_status varchar(255) NOT NULL,
-  histological_type varchar(255) NOT NULL
+  histological_type varchar(255) NOT NULL,
+  pathologic_stage varchar(255) NOT NULL,
+  pathologic_T varchar(255) NOT NULL,
+  pathologic_N varchar(255) NOT NULL,
+  pathologic_M varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;"
