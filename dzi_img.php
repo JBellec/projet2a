@@ -105,7 +105,10 @@
                     <?php }else{ ?>
             <span class="label label-success">Positive</span><br/>
                     <?php } ?></a>
-                <a href="#" class="list-group-item"><b>Histological type : </b><?php echo $image['histological_type'];?></a>
+                <a href="#" class="list-group-item"><b>Pathologic Stage : </b><?php echo $image['pathologic_stage'];?></a>
+                <a href="#" class="list-group-item"><b>Pathologic T : </b><?php echo $image['pathologic_T'];?></a>
+                <a href="#" class="list-group-item"><b>Pathologic N : </b><?php echo $image['pathologic_N'];?></a>
+                <a href="#" class="list-group-item"><b>Pathologic M : </b><?php echo $image['pathologic_M'];?></a>
             </div>
         
             <a href = <?php echo $image['xml'];?> target ="_blank"><button type="button" class="btn btn-sm btn-info">Lien vers les données du patient</button></a><br/><br/>

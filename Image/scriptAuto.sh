@@ -198,9 +198,54 @@ do
 	rm HistologicalType | rm HistologicalType2 | rm HistologicalType3
 	echo $HistologicalType
 
+	grep "<shared_stage:pathologic_stage .*>.*</.*>" <patient.xml>tmpPathologicStage.xml
+	sed "s/<shared_stage:pathologic_stage .*\">//" <tmpPathologicStage.xml>tmpPathologicStage2.xml
+	sed "s/<\/shared_stage:pathologic_stage>//" <tmpPathologicStage2.xml>PathologicStage.txt
+	sed -n '1p'<PathologicStage.txt>PathologicStage
+	sed "s/^\ \ *//" <PathologicStage>PathologicStage2
+	tr -d '\r\n' < PathologicStage2 > PathologicStage3
+	rm tmpPathologicStage2.xml | rm tmpPathologicStage.xml | rm PathologicStage.txt
+	PathologicStage=$(<PathologicStage3)
+	rm PathologicStage | rm PathologicStage2 | rm PathologicStage3
+	echo $PathologicStage
+
+	grep "<shared_stage:pathologic_T .*>.*</.*>" <patient.xml>tmpPathologicT.xml
+	sed "s/<shared_stage:pathologic_T .*\">//" <tmpPathologicT.xml>tmpPathologicT2.xml
+	sed "s/<\/shared_stage:pathologic_T>//" <tmpPathologicT2.xml>PathologicT.txt
+	sed -n '1p'<PathologicT.txt>PathologicT
+	sed "s/^\ \ *//" <PathologicT>PathologicT2
+	tr -d '\r\n' < PathologicT2 > PathologicT3
+	rm tmpPathologicT2.xml | rm tmpPathologicT.xml | rm PathologicT.txt
+	PathologicT=$(<PathologicT3)
+	rm PathologicT | rm PathologicT2 | rm PathologicT3
+	echo $PathologicT
+
+	grep "<shared_stage:pathologic_N .*>.*</.*>" <patient.xml>tmpPathologicN.xml
+	sed "s/<shared_stage:pathologic_N .*\">//" <tmpPathologicN.xml>tmpPathologicN2.xml
+	sed "s/<\/shared_stage:pathologic_N>//" <tmpPathologicN2.xml>PathologicN.txt
+	sed -n '1p'<PathologicN.txt>PathologicN
+	sed "s/^\ \ *//" <PathologicN>PathologicN2
+	tr -d '\r\n' < PathologicN2 > PathologicN3
+	rm tmpPathologicN2.xml | rm tmpPathologicN.xml | rm PathologicN.txt
+	PathologicN=$(<PathologicN3)
+	rm PathologicN | rm PathologicN2 | rm PathologicN3
+	echo $PathologicN
+
+	grep "<shared_stage:pathologic_M .*>.*</.*>" <patient.xml>tmpPathologicM.xml
+	sed "s/<shared_stage:pathologic_M .*\">//" <tmpPathologicM.xml>tmpPathologicM2.xml
+	sed "s/<\/shared_stage:pathologic_M>//" <tmpPathologicM2.xml>PathologicM.txt
+	sed -n '1p'<PathologicM.txt>PathologicM
+	sed "s/^\ \ *//" <PathologicM>PathologicM2
+	tr -d '\r\n' < PathologicM2 > PathologicM3
+	rm tmpPathologicM2.xml | rm tmpPathologicM.xml | rm PathologicM.txt
+	PathologicM=$(<PathologicM3)
+	rm PathologicM | rm PathologicM2 | rm PathologicM3
+	echo $PathologicM
 
 
-	mysql -h localhost -u $user -p$password -D projet2a -e "INSERT INTO miniatures VALUES ('$titre', 'ImageDzi/$chemin', '$xml','$lienPdf', '$barcode', '$gender', '$status', '$race', '$country', '$tumor', '$daysToBirth', '$daysToDeath','$TumorStatus', '$Contact', '$Age', '$ErStatusIhc', '$PrStatusIhc', '$Her2StatusIhc', '$HistologicalType');"
+
+
+	mysql -h localhost -u $user -p$password -D projet2a -e "INSERT INTO miniatures VALUES ('$titre', 'ImageDzi/$chemin', '$xml','$lienPdf', '$barcode', '$gender', '$status', '$race', '$country', '$tumor', '$daysToBirth', '$daysToDeath','$TumorStatus', '$Contact', '$Age', '$ErStatusIhc', '$PrStatusIhc', '$Her2StatusIhc', '$HistologicalType', '$PathologicStage', '$PathologicT', '$PathologicN', '$PathologicM');"
 done
 
 rm tmp | rm lienPdfTmp.xml | rm patient.xml

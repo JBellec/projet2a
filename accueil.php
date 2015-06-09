@@ -209,6 +209,10 @@
             <span class="label label-success">Positive</span><br/>
                 <?php } ?></a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Histological type :  </b><?php echo $image['histological_type'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Pathologic Stage : </b><?php echo $image['pathologic_stage'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Pathologic T : </b><?php echo $image['pathologic_T'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Pathologic N : </b><?php echo $image['pathologic_N'];?></a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" ><b>Pathologic M : </b><?php echo $image['pathologic_M'];?></a></li>  
         </ul>
   </div>
 		            </div>
