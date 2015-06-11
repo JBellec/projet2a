@@ -11,7 +11,35 @@
       die('Erreur : ' . $e->getMessage('pas connecté'));
    }
 ?> 
+<head>
+  <?php include 'includes/lightbox.php' ?>
+</head>
 <body>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/1.3.4/jquery.fancybox-1.3.4.pack.min.js"></script>
+<script type="text/javascript">
+    $(function($){
+        var addToAll = false;
+        var gallery = false;
+        var titlePosition = 'inside';
+        $(addToAll ? 'img' : 'img.fancybox').each(function(){
+            var $this = $(this);
+            var title = $this.attr('title');
+            var src = $this.attr('data-big') || $this.attr('src');
+            var a = $('<a href="#" class="fancybox"></a>').attr('href', src).attr('title', title);
+            $this.wrap(a);
+        });
+        if (gallery)
+            $('a.fancybox').attr('rel', 'fancyboxgallery');
+        $('a.fancybox').fancybox({
+            titlePosition: titlePosition
+        });
+    });
+    $.noConflict();
+</script>
+
  <title>Tutoriel</title>
   
   <div class="container">
@@ -100,7 +128,7 @@
         Créez un dossier ImageDzi qui permettra de stocker les images converties.</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="Logo/screenStep1.png" alt="Generic placeholder image">
+          <img class ="fancybox" class="featurette-image img-responsive center-block" src="Logo/screenStep1.png" alt="Generic placeholder image" width="425" height="303.5">
         </div>
       </div>
 
@@ -114,8 +142,7 @@
       La base de données est maintenant opérationnelle.</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" src="Logo/screenStep2.png" alt="Generic placeholder image">
-        </div>
+          <img class ="fancybox" class="featurette-image img-responsive center-block" src="Logo/screenStep2.png" alt="Generic placeholder image" width="425" height="303.5">        </div>
       </div>
 
       <hr class="featurette-divider">
@@ -130,7 +157,7 @@
       et copiez le dossier au même endroit que les dossiers Image et ImageDzi.<br /> Attention ! Si vous télécharger OpenSeaDragon pensez à changer le nom du dossier openseadragon-bin-version.zip en openseadragon.</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" src="Logo/screenStep3.png" alt="Generic placeholder image">
+          <img class ="fancybox" class="featurette-image img-responsive center-block" src="Logo/screenStep3.png" alt="Generic placeholder image" width="425" height="303.5">
         </div>
       </div>
 
@@ -144,8 +171,8 @@
       Vous pouvez maintenant observer les images dans votre navigateur internet. </p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" src="Logo/screenStep4.png" alt="Generic placeholder image"> <br/>
-          <img class="featurette-image img-responsive center-block" src="Logo/screenStep4.1.png" alt="Generic placeholder image">
+          <img class ="fancybox" class="featurette-image img-responsive center-block" src="Logo/screenStep4.png" alt="Generic placeholder image" width="425" height="303.5"> <br/>
+          <img class ="fancybox" class="featurette-image img-responsive center-block" src="Logo/screenStep4.1.png" alt="Generic placeholder image" width="328.5" height="35">
         </div>
       </div>
 
