@@ -64,7 +64,7 @@
               <h1>Notre Objectif ?</h1>
               <p>Visualiser des images histologiques acquises par des microscopes électroniques. </p>
 	<p>La visualisation de ces images volumineuses (~1gb par image)  par une plateforme web permet de faciliter leur utilisation pour le diagnostique (éventuellement à distance) ou pour la formation.</p>
-              <p><a class="btn btn-lg btn-primary" href="acceuil.php" role="button">Accès au images</a></p>
+              <p><a class="btn btn-lg btn-primary" href="accueil.php" role="button">Accès au images</a></p>
             </div>
           </div>
         </div>
